@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
+import joblib
 
 # Load cleaned data
 df = pd.read_csv("cleaned_iris.csv")
@@ -62,3 +63,5 @@ plt.ylabel("Feature", fontsize=12)
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
+
+joblib.dump(rf, "random_forest_iris.joblib")  # Saves the model to a file
